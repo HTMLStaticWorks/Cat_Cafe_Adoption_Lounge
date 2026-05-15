@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Purr & Pour Cat Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFF7ED',
+                        'caramel': '#C08457',
+                        'sage': '#84A98C',
+                        'beige': '#FAF6F1',
+                        'charcoal': '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-beige font-inter">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-10 bg-white/85 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2">
+                <i class="fas fa-cat"></i>
+                <span>Purr & Pour</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex items-center gap-6 font-medium text-charcoal absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="nav-link text-caramel">Home 1</a>
+                <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden xl:flex items-center gap-3">
+                <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+                <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+                <a href="login.html" class="inline-flex items-center justify-center rounded-full bg-caramel px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-caramel/90">Login</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="xl:hidden text-2xl text-charcoal" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <section class="pt-40 pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="font-accent text-caramel text-3xl mb-4 block">Blog</span>
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold text-charcoal mb-8 leading-tight">Feline Features <br> & Stories.</h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Cat care tips, adoption success stories, and cafe updates from our team and community.
+                </p>
+                <div class="flex items-center gap-6">
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-caramel">500+</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Adoptions</span>
+                    </div>
+                    <div class="w-px h-12 bg-gray-200"></div>
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-sage">12k</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Cups Served</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="relative z-10 rounded-[50px] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000" alt="Blog Hero" class="w-full">
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-caramel/10 rounded-full blur-3xl"></div>
+                <div class="absolute -top-10 -right-10 w-60 h-60 bg-sage/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+<section class="pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Blog Post 1 -->
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" alt="Blog 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-4 text-sm text-caramel font-bold mb-4">
+                        <span class="uppercase">Cat Care</span>
+                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span class="text-gray-500">May 10, 2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal mb-4 group-hover:text-caramel transition-colors">Preparing Your Home for a New Cat</h3>
+                    <p class="text-gray-600 mb-6">Essential tips for a smooth transition when bringing your adopted companion home.</p>
+                    <a href="#" class="font-bold text-charcoal border-b-2 border-caramel pb-1">Read Story</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&q=80&w=800" alt="Blog 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-4 text-sm text-caramel font-bold mb-4">
+                        <span class="uppercase">Success Stories</span>
+                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span class="text-gray-500">Apr 28, 2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal mb-4 group-hover:text-caramel transition-colors">Luna's Journey: From Rescue to Royalty</h3>
+                    <p class="text-gray-600 mb-6">How Luna found her forever family and the special bond they share today.</p>
+                    <a href="#" class="font-bold text-charcoal border-b-2 border-caramel pb-1">Read Story</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544787210-2211d74fc31e?auto=format&fit=crop&q=80&w=800" alt="Blog 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-4 text-sm text-caramel font-bold mb-4">
+                        <span class="uppercase">Café Culture</span>
+                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span class="text-gray-500">Apr 15, 2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal mb-4 group-hover:text-caramel transition-colors">The Art of the Perfect Matcha Latte</h3>
+                    <p class="text-gray-600 mb-6">A behind-the-scenes look at how we source and prepare our ceremonial matcha.</p>
+                    <a href="#" class="font-bold text-charcoal border-b-2 border-caramel pb-1">Read Story</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="pb-24 px-6">
+        <div class="max-w-7xl mx-auto bg-white rounded-[40px] p-10 md:p-14 shadow-sm">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-accent text-caramel text-3xl mb-3 block">Editor Picks</span>
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold text-charcoal mb-5">This Week's Must-Read Stories</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Handpicked posts from our team covering feline wellness, first-week adoption guidance, and cafe behind-the-scenes moments.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="#" class="block bg-beige rounded-2xl p-5 hover:shadow-md transition-all">
+                        <p class="text-xs uppercase tracking-widest text-caramel font-bold mb-2">Wellness</p>
+                        <h3 class="text-xl font-bold text-charcoal mb-2">5 Signs Your Cat Feels Safe at Home</h3>
+                        <p class="text-gray-600 text-sm">Small behavior cues that show trust and comfort.</p>
+                    </a>
+                    <a href="#" class="block bg-beige rounded-2xl p-5 hover:shadow-md transition-all">
+                        <p class="text-xs uppercase tracking-widest text-caramel font-bold mb-2">Adoption</p>
+                        <h3 class="text-xl font-bold text-charcoal mb-2">First 48 Hours After Adoption</h3>
+                        <p class="text-gray-600 text-sm">A simple setup routine for smooth adjustment.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="font-accent text-caramel text-3xl mb-3 block">Topics</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-charcoal">Browse by Category</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-3xl p-7 border border-gray-100">
+                    <i class="fas fa-heart text-caramel text-2xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-charcoal mb-2">Cat Care</h3>
+                    <p class="text-gray-600">Health, grooming, and behavior fundamentals.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 border border-gray-100">
+                    <i class="fas fa-home text-caramel text-2xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-charcoal mb-2">Adoption Life</h3>
+                    <p class="text-gray-600">Home prep guides and family adjustment tips.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 border border-gray-100">
+                    <i class="fas fa-mug-hot text-caramel text-2xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-charcoal mb-2">Cafe Culture</h3>
+                    <p class="text-gray-600">Menu stories, recipes, and barista insights.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 border border-gray-100">
+                    <i class="fas fa-users text-caramel text-2xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-charcoal mb-2">Community</h3>
+                    <p class="text-gray-600">Events, volunteer highlights, and impact reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-24 px-6">
+        <div class="max-w-5xl mx-auto bg-charcoal text-white rounded-[40px] p-10 md:p-14 text-center relative overflow-hidden">
+            <div class="absolute -top-12 -left-10 w-48 h-48 rounded-full bg-caramel/20 blur-3xl"></div>
+            <div class="absolute -bottom-16 -right-12 w-52 h-52 rounded-full bg-sage/20 blur-3xl"></div>
+            <div class="relative z-10">
+                <span class="font-accent text-caramel text-3xl mb-3 block">Newsletter</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4">Get New Stories Every Week</h2>
+                <p class="text-gray-200 text-lg mb-8 max-w-2xl mx-auto">
+                    Receive cat care tips, adoption wins, and cafe updates directly in your inbox.
+                </p>
+                <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Enter your email" class="flex-1 rounded-full px-6 py-4 text-charcoal outline-none">
+                    <button type="button" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2 mb-6">
+                        <i class="fas fa-cat"></i>
+                        <span>Purr & Pour</span>
+                    </a>
+                    <p class="text-gray-600 mb-6">A premium sanctuary for cats and coffee lovers. Dedicated to finding forever homes for our feline friends since 2020.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li><a href="about.html" class="hover:text-caramel transition-colors">Our Story</a></li>
+                        <li><a href="resident-cats.html" class="hover:text-caramel transition-colors">Resident Cats</a></li>
+                        <li><a href="adoption.html" class="hover:text-caramel transition-colors">Adoption Process</a></li>
+                        <li><a href="events.html" class="hover:text-caramel transition-colors">Events & Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-caramel"></i>
+                            <span>123 Feline Lane, Cozy Valley<br>Catown, CT 56789</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-caramel"></i>
+                            <span>(555) 123-PURR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-caramel"></i>
+                            <span>hello@purrandpour.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Stay Connected</h4>
+                    <p class="text-gray-600 mb-4">Get cat updates and event news straight to your inbox.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-caramel transition-colors">
+                        <button type="button" class="absolute right-2 top-2 bg-caramel text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-caramel/90 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Purr & Pour Cat Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

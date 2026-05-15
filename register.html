@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Purr & Pour Cat Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'cream': '#FFF7ED', 'caramel': '#C08457', 'sage': '#84A98C', 'beige': '#FAF6F1', 'charcoal': '#1F2937' },
+                    fontFamily: { 'playfair': ['"Playfair Display"', 'serif'], 'inter': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-beige font-inter min-h-screen flex flex-col p-6 overflow-x-hidden overflow-y-auto relative">
+
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-caramel/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-sage/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="fixed top-3 right-3 sm:top-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3">
+        <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+        <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+    </div>
+<main class="flex-1 w-full flex items-center justify-center pt-20 sm:pt-24 md:pt-0">
+    <div class="max-w-md w-full relative z-10">
+        <div class="glass-card p-10 bg-white/40 backdrop-blur-xl border border-white/20 rounded-[40px] shadow-2xl">
+            <div class="text-center mb-10">
+                <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center justify-center gap-2 mb-6">
+                    <i class="fas fa-cat"></i>
+                    <span>Purr & Pour</span>
+                </a>
+                <h1 class="text-3xl font-bold text-charcoal">Create Your Account</h1>
+                <p class="text-gray-500">Join our community of cat lovers today</p>
+            </div>
+            <form class="space-y-5">
+                <div>
+                    <label class="block text-sm font-bold text-charcoal mb-2">Full Name</label>
+                    <input type="text" class="w-full bg-white/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none transition-all" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-charcoal mb-2">Email Address</label>
+                    <input type="email" class="w-full bg-white/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none transition-all" placeholder="name@example.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-charcoal mb-2">Password</label>
+                    <input type="password" class="w-full bg-white/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none transition-all" placeholder="••••••••">
+                </div>
+                
+                <div class="text-xs text-gray-500 leading-relaxed">
+                    By clicking "Create Account", you agree to our <a href="#" class="text-caramel underline">Terms of Service</a> and <a href="#" class="text-caramel underline">Privacy Policy</a>.
+                </div>
+
+                <button class="w-full btn-primary py-4 text-lg">Create Account</button>
+            </form>
+        </div>
+
+        <p class="text-center mt-8 text-gray-600">
+            Already have an account? <a href="login.html" class="text-caramel font-bold hover:underline">Sign in instead</a>
+        </p>
+    </div>
+
+    </main>
+
+   
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+

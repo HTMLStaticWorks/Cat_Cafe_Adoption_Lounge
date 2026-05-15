@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Cafe & Adoption Lounge | Sip Coffee. Meet Cats. Find Your Companion.</title>
+    <meta name="description" content="Experience the ultimate relaxation at our premium cat cafe and adoption lounge. Specialty coffee, cozy ambiance, and lovable cats waiting for their forever homes.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFF7ED',
+                        'caramel': '#C08457',
+                        'sage': '#84A98C',
+                        'beige': '#FAF6F1',
+                        'charcoal': '#1F2937',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'parisienne': ['Parisienne', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body.theme-dark {
+            background-color: #111827;
+            color: #e5e7eb;
+        }
+        body.theme-dark .bg-beige {
+            background-color: #0f172a !important;
+        }
+        body.theme-dark .bg-white {
+            background-color: #111827 !important;
+        }
+        body.theme-dark .text-charcoal {
+            color: #e5e7eb !important;
+        }
+        body.theme-dark .text-gray-600,
+        body.theme-dark .text-gray-500 {
+            color: #cbd5e1 !important;
+        }
+        body.theme-dark #navbar {
+            background: rgba(17, 24, 39, 0.9);
+            backdrop-filter: blur(6px);
+        }
+        body.theme-dark #navbar .nav-link,
+        body.theme-dark #navbar .text-charcoal {
+            color: #e5e7eb !important;
+        }
+        body.theme-dark #navbar .text-caramel {
+            color: #f4b183 !important;
+        }
+    </style>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-beige font-inter overflow-x-hidden">
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-10 bg-white/85 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2">
+                <i class="fas fa-cat"></i>
+                <span>Purr & Pour</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex items-center gap-6 font-medium text-charcoal absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="nav-link text-caramel">Home 1</a>
+                <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden xl:flex items-center gap-3">
+                <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+                <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+                <a href="login.html" class="inline-flex items-center justify-center rounded-full bg-caramel px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-caramel/90">Login</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="xl:hidden text-2xl text-charcoal" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero Banner -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image/Video Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=2043" alt="Cozy Cat Cafe" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl w-full" data-aos="fade-up">
+            <span class="font-accent text-cream text-2xl md:text-3xl mb-4 block">Where every purr counts</span>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl text-white font-bold mb-8 leading-tight">
+                Sip Coffee. Meet Cats. <br> Find Your Companion.
+            </h1>
+            <p class="text-lg md:text-xl text-cream/90 mb-10 max-w-2xl mx-auto">
+                Step into a sanctuary of warmth and tranquility. Our premium lounge offers the perfect blend of specialty coffee and feline friendship.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="booking.html" class="inline-flex items-center justify-center rounded-full bg-caramel px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-caramel/90">Book Your Visit</a>
+                <a href="resident-cats.html" class="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-charcoal">Meet Our Cats</a>
+            </div>
+        </div>
+        
+        <!-- Floating Paws -->
+        <div class="floating-paw top-1/4 left-10 text-white/20 text-4xl"><i class="fas fa-paw"></i></div>
+        <div class="floating-paw bottom-1/4 right-10 text-white/20 text-5xl" style="animation-delay: 2s;"><i class="fas fa-paw"></i></div>
+        
+        <!-- Scroll Down -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Section 2: Resident Cat Profiles -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">Meet Our Resident Stars</h2>
+                <div class="w-24 h-1 bg-caramel mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">These lovable felines are the heart of our cafe. Many are looking for their forever homes!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Cat Card 1 -->
+                <div class="group bg-beige rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&q=80&w=800" alt="Luna" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-sage text-white px-3 py-1 rounded-full text-sm font-medium">Adoptable</span>
+                            <span class="bg-caramel text-white px-3 py-1 rounded-full text-sm font-medium">Friendly</span>
+                        </div>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-red-500 hover:bg-white transition-all">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-charcoal">Luna</h3>
+                            <span class="text-gray-500">2 Years Old</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 line-clamp-2">A gentle soul who loves head scratches and sunny spots near the window.</p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Calico</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Vaccinated</span>
+                        </div>
+                        <a href="adoption.html" class="block w-full text-center py-3 bg-white border-2 border-caramel text-caramel rounded-xl font-bold hover:bg-caramel hover:text-white transition-all">Adopt Me</a>
+                    </div>
+                </div>
+
+                <!-- Cat Card 2 -->
+                <div class="group bg-beige rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://caughtinsouthie.com/wp-content/uploads/2025/01/oliver-the-cat.jpg" alt="Oliver" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-sage text-white px-3 py-1 rounded-full text-sm font-medium">Adoptable</span>
+                            <span class="bg-caramel text-white px-3 py-1 rounded-full text-sm font-medium">Playful</span>
+                        </div>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-red-500 hover:bg-white transition-all">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-charcoal">Oliver</h3>
+                            <span class="text-gray-500">1 Year Old</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 line-clamp-2">The resident comedian. Oliver will keep you entertained with his acrobatics!</p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Tabby</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Vaccinated</span>
+                        </div>
+                        <a href="adoption.html" class="block w-full text-center py-3 bg-white border-2 border-caramel text-caramel rounded-xl font-bold hover:bg-caramel hover:text-white transition-all">Adopt Me</a>
+                    </div>
+                </div>
+
+                <!-- Cat Card 3 -->
+                <div class="group bg-beige rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none lg:mx-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&q=80&w=800" alt="Mochi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm font-medium">Resident</span>
+                            <span class="bg-caramel text-white px-3 py-1 rounded-full text-sm font-medium">Chill</span>
+                        </div>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-red-500 hover:bg-white transition-all">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-charcoal">Mochi</h3>
+                            <span class="text-gray-500">4 Years Old</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 line-clamp-2">Our queen mother. Mochi oversees the cafe and welcomes all newcomers with a sniff.</p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Persian</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded-md text-gray-500 border border-gray-100">Vaccinated</span>
+                        </div>
+                        <a href="resident-cats.html" class="block w-full text-center py-3 bg-white border-2 border-caramel text-caramel rounded-xl font-bold hover:bg-caramel hover:text-white transition-all">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="resident-cats.html" class="inline-flex items-center gap-2 text-caramel font-bold text-lg hover:gap-4 transition-all">
+                    See All Our Cats <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Café Experience -->
+    <section class="py-24 px-6 bg-beige relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&q=80&w=800" alt="Premium Coffee" class="rounded-[40px] shadow-2xl relative z-10">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-sage/20 rounded-full z-0"></div>
+                    <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-caramel/10 rounded-full z-0"></div>
+                </div>
+            </div>
+            <div class="lg:w-1/2" data-aos="fade-left">
+                <span class="font-accent text-caramel text-3xl mb-4 block">Taste of Tranquility</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-6 leading-tight">Premium Coffee Meets Paws-itive Vibes</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    We take our coffee as seriously as our cat care. Enjoy specialty beans roasted locally, paired with artisanal desserts, all in a space designed for ultimate relaxation.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mb-10">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                            <i class="fas fa-coffee text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Specialty Brews</h4>
+                            <p class="text-sm text-gray-500">Barista-quality coffee</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                            <i class="fas fa-cookie text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Artisanal Treats</h4>
+                            <p class="text-sm text-gray-500">Fresh daily pastries</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                            <i class="fas fa-couch text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Cozy Lounge</h4>
+                            <p class="text-sm text-gray-500">Premium seating areas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                            <i class="fas fa-wifi text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Work-Friendly</h4>
+                            <p class="text-sm text-gray-500">Quiet spots & fast Wi-Fi</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Adoption Process -->
+    <section class="py-24 px-6 bg-white relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">How to Bring Love Home</h2>
+                <div class="w-24 h-1 bg-sage mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600">Our seamless adoption process ensures the perfect match for you and our felines.</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-beige -translate-x-1/2 hidden md:block"></div>
+                
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 mb-20 relative z-10" data-aos="fade-up">
+                    <div class="md:w-1/2 text-right hidden md:block">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Visit & Connect</h3>
+                        <p class="text-gray-600">Book a session and spend quality time with our cats to see who you bond with naturally.</p>
+                    </div>
+                    <div class="w-16 h-16 bg-caramel text-white rounded-full flex items-center justify-center text-2xl font-bold border-8 border-white shadow-lg">1</div>
+                    <div class="md:w-1/2 md:hidden">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Visit & Connect</h3>
+                        <p class="text-gray-600">Book a session and spend quality time with our cats to see who you bond with naturally.</p>
+                    </div>
+                    <div class="md:w-1/2 hidden md:block"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 mb-20 relative z-10" data-aos="fade-up">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-16 h-16 bg-sage text-white rounded-full flex items-center justify-center text-2xl font-bold border-8 border-white shadow-lg">2</div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Apply Online</h3>
+                        <p class="text-gray-600">Fill out our comprehensive adoption application. Tell us about your home and lifestyle.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 mb-20 relative z-10" data-aos="fade-up">
+                    <div class="md:w-1/2 text-right hidden md:block">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Home Check & Interview</h3>
+                        <p class="text-gray-600">We'll have a brief chat and a virtual home tour to ensure a safe environment for your new friend.</p>
+                    </div>
+                    <div class="w-16 h-16 bg-caramel text-white rounded-full flex items-center justify-center text-2xl font-bold border-8 border-white shadow-lg">3</div>
+                    <div class="md:w-1/2 md:hidden">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Home Check & Interview</h3>
+                        <p class="text-gray-600">We'll have a brief chat and a virtual home tour to ensure a safe environment for your new friend.</p>
+                    </div>
+                    <div class="md:w-1/2 hidden md:block"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 relative z-10" data-aos="fade-up">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-16 h-16 bg-sage text-white rounded-full flex items-center justify-center text-2xl font-bold border-8 border-white shadow-lg">4</div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-charcoal mb-2">Welcome Home</h3>
+                        <p class="text-gray-600">Pick up your new companion and start your journey together! We provide a starter kit for all adoptions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-20">
+                <a href="adoption.html" class="btn-primary px-12 text-xl">Start Adoption Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Live Lounge & Events -->
+    <section class="py-24 px-6 bg-charcoal text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Experience the Lounge <span class="text-caramel">Live</span></h2>
+                    <p class="text-lg text-gray-300 mb-8">Can't make it in person? Watch our felines play, sleep, and interact in real-time. Warning: Highly addictive content!</p>
+                    
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 group">
+                        <img src="https://images.unsplash.com/photo-1548247416-ec66f4900b2e?auto=format&fit=crop&q=80&w=800" alt="Live Feed" class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button class="w-20 h-20 bg-caramel text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform">
+                                <i class="fas fa-play ml-1"></i>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-md text-sm font-bold flex items-center gap-2">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> LIVE FEED
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold mb-8">Upcoming Events</h3>
+                    <div class="space-y-6">
+                        <!-- Event 1 -->
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="text-center min-w-[80px]">
+                                <span class="block text-2xl font-bold text-caramel">15</span>
+                                <span class="block text-sm uppercase">May</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold">Cat Yoga Morning</h4>
+                                <p class="text-gray-400">Relax your body and mind with our resident cats.</p>
+                            </div>
+                            <a href="events.html" class="text-caramel hover:text-white"><i class="fas fa-plus"></i></a>
+                        </div>
+                        <!-- Event 2 -->
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="text-center min-w-[80px]">
+                                <span class="block text-2xl font-bold text-caramel">22</span>
+                                <span class="block text-sm uppercase">May</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold">Adoption Meetup</h4>
+                                <p class="text-gray-400">Special event for prospective adopters.</p>
+                            </div>
+                            <a href="events.html" class="text-caramel hover:text-white"><i class="fas fa-plus"></i></a>
+                        </div>
+                        <!-- Event 3 -->
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="text-center min-w-[80px]">
+                                <span class="block text-2xl font-bold text-caramel">05</span>
+                                <span class="block text-sm uppercase">Jun</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold">Painting with Paws</h4>
+                                <p class="text-gray-400">A creative workshop surrounded by cats.</p>
+                            </div>
+                            <a href="events.html" class="text-caramel hover:text-white"><i class="fas fa-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Testimonials + Final CTA -->
+    <section class="py-24 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">Adoption Success Stories</h2>
+                <div class="w-24 h-1 bg-caramel mx-auto mb-6"></div>
+            </div>
+            
+            <!-- Testimonials Swiper -->
+            <div class="swiper testimonialSwiper pb-16" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg-beige p-10 rounded-[40px] text-center max-w-3xl mx-auto">
+                            <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-md">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" alt="Sarah J." class="w-full h-full object-cover">
+                            </div>
+                            <p class="text-xl italic text-gray-700 mb-6 font-playfair">"Adopting Oliver was the best decision I've ever made. The staff at Purr & Pour made the transition so smooth, and we are now inseparable!"</p>
+                            <h4 class="font-bold text-charcoal text-lg">Sarah Jenkins</h4>
+                            <span class="text-caramel font-medium">Adopted Oliver in March 2024</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-beige p-10 rounded-[40px] text-center max-w-3xl mx-auto">
+                            <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-md">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="Mark T." class="w-full h-full object-cover">
+                            </div>
+                            <p class="text-xl italic text-gray-700 mb-6 font-playfair">"The coffee is incredible, but the cats are the real stars. It's my favorite place to work and unwind. Truly a premium experience."</p>
+                            <h4 class="font-bold text-charcoal text-lg">Mark Thompson</h4>
+                            <span class="text-caramel font-medium">Regular Visitor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <!-- Final CTA Card -->
+            <div class="mt-20 glass-card p-12 rounded-[50px] text-center relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-caramel/10 rounded-full"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-sage/10 rounded-full"></div>
+                
+                <h3 class="text-4xl md:text-5xl font-bold text-charcoal mb-8">Find Comfort, Coffee & <br> Your Future Best Friend</h3>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="booking.html" class="btn-primary text-xl px-12">Book Your Visit</a>
+                    <a href="adoption.html" class="btn-outline text-xl px-12">Adopt Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-beige pt-20 pb-10 px-6 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2 mb-6">
+                        <i class="fas fa-cat"></i>
+                        <span>Purr & Pour</span>
+                    </a>
+                    <p class="text-gray-600 mb-6">A premium sanctuary for cats and coffee lovers. Dedicated to finding forever homes for our feline friends since 2020.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li><a href="about.html" class="hover:text-caramel transition-colors">Our Story</a></li>
+                        <li><a href="resident-cats.html" class="hover:text-caramel transition-colors">Resident Cats</a></li>
+                        <li><a href="adoption.html" class="hover:text-caramel transition-colors">Adoption Process</a></li>
+                        <li><a href="events.html" class="hover:text-caramel transition-colors">Events & Workshops</a></li>
+                        <li><a href="menu.html" class="hover:text-caramel transition-colors">Café Menu</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-caramel"></i>
+                            <span>123 Feline Lane, Cozy Valley<br>Catown, CT 56789</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-caramel"></i>
+                            <span>(555) 123-PURR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-caramel"></i>
+                            <span>hello@purrandpour.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-600 mb-4">Get cat updates and event news straight to your inbox.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-caramel transition-colors">
+                        <button class="absolute right-2 top-2 bg-caramel text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-caramel/90 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-10 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Purr & Pour Cat Cafe. All rights reserved. Designed with love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        (() => {
+        // Initialize AOS (guarded so other buttons still work offline)
+        if (window.AOS) {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+            });
+        }
+
+        // Initialize Swiper (guarded so other buttons still work offline)
+        if (window.Swiper && document.querySelector('.testimonialSwiper')) {
+            new Swiper('.testimonialSwiper', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (!navbar) return;
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-4');
+                navbar.classList.remove('bg-white/85', 'shadow-sm', 'py-6');
+            } else {
+                navbar.classList.remove('bg-white/90', 'shadow-md', 'py-4');
+                navbar.classList.add('bg-white/85', 'backdrop-blur-md', 'shadow-sm', 'py-6');
+            }
+        });
+
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        const safeGet = (key) => {
+            try {
+                return window.localStorage.getItem(key);
+            } catch (e) {
+                return null;
+            }
+        };
+
+        const safeSet = (key, value) => {
+            try {
+                window.localStorage.setItem(key, value);
+            } catch (e) {
+                // Ignore storage errors in file:// or restricted contexts.
+            }
+        };
+
+        const applyDirection = (dir) => {
+            document.documentElement.setAttribute('dir', dir);
+            if (rtlToggle) {
+                rtlToggle.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+            }
+        };
+
+        window.toggleRTL = () => {
+            const nextDirection = document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
+            applyDirection(nextDirection);
+            safeSet('site-direction', nextDirection);
+        };
+
+        const savedDirection = safeGet('site-direction');
+        applyDirection(savedDirection === 'rtl' ? 'rtl' : 'ltr');
+
+
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('theme-dark', isDark);
+            if (themeToggle) {
+                themeToggle.textContent = isDark ? 'Light' : 'Theme';
+            }
+        };
+
+        window.toggleTheme = () => {
+            const nextTheme = document.body.classList.contains('theme-dark') ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            safeSet('site-theme', nextTheme);
+        };
+
+        const savedTheme = safeGet('site-theme');
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+        })();
+
+    </script>
+</body>
+</html>
+

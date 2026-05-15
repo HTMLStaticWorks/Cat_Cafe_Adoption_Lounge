@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Purr & Pour Cat Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFF7ED',
+                        'caramel': '#C08457',
+                        'sage': '#84A98C',
+                        'beige': '#FAF6F1',
+                        'charcoal': '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-beige font-inter">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-10 bg-white/85 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2">
+                <i class="fas fa-cat"></i>
+                <span>Purr & Pour</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex items-center gap-6 font-medium text-charcoal absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="nav-link text-caramel">Home 1</a>
+                <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden xl:flex items-center gap-3">
+                <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+                <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+                <a href="login.html" class="inline-flex items-center justify-center rounded-full bg-caramel px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-caramel/90">Login</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="xl:hidden text-2xl text-charcoal" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+        <section class="pt-40 pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="font-accent text-caramel text-3xl mb-4 block">Contact</span>
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold text-charcoal mb-8 leading-tight">Get in <br> Touch.</h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Have questions about adoption, bookings, or our menu? We're here to help and guide your next visit.
+                </p>
+                <div class="flex items-center gap-6">
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-caramel">500+</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Adoptions</span>
+                    </div>
+                    <div class="w-px h-12 bg-gray-200"></div>
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-sage">12k</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Cups Served</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="relative z-10 rounded-[50px] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000" alt="Contact Hero" class="w-full">
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-caramel/10 rounded-full blur-3xl"></div>
+                <div class="absolute -top-10 -right-10 w-60 h-60 bg-sage/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+    <main class="pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                
+                <div>
+                    <h1 class="text-5xl font-bold text-charcoal mb-8">Get in Touch</h1>
+                    <p class="text-xl text-gray-600 mb-12">Have questions about adoption, bookings, or our menu? We're here to help.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Our Location</h4>
+                                <p class="text-gray-500">123 Feline Lane, Cozy Valley, Catown, CT 56789</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Call Us</h4>
+                                <p class="text-gray-500">(555) 123-PURR</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Email Us</h4>
+                                <p class="text-gray-500">hello@purrandpour.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="font-bold text-xl mb-4 text-charcoal">Follow Us</h4>
+                        <div class="flex items-center gap-4">
+                            <a href="#" aria-label="Instagram" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" aria-label="X" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all">
+                                <i class="fab fa-x-twitter text-xl"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-caramel shadow-sm hover:bg-caramel hover:text-white transition-all">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-16 h-80 rounded-[40px] overflow-hidden border-4 border-white shadow-xl">
+                        <iframe
+                            src="https://maps.google.com/maps?q=123%20Feline%20Lane%2C%20Cozy%20Valley%2C%20Catown&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Purr & Pour Location Map">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="bg-white p-12 rounded-[50px] shadow-xl">
+                    <h3 class="text-3xl font-bold text-charcoal mb-8">Send us a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-charcoal mb-2">First Name</label>
+                                <input type="text" class="w-full bg-beige border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-charcoal mb-2">Last Name</label>
+                                <input type="text" class="w-full bg-beige border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-charcoal mb-2">Email</label>
+                            <input type="email" class="w-full bg-beige border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-charcoal mb-2">Message</label>
+                            <textarea class="w-full bg-beige border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-caramel outline-none h-40" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button class="w-full btn-primary text-xl py-5">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2 mb-6">
+                        <i class="fas fa-cat"></i>
+                        <span>Purr & Pour</span>
+                    </a>
+                    <p class="text-gray-600 mb-6">A premium sanctuary for cats and coffee lovers. Dedicated to finding forever homes for our feline friends since 2020.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li><a href="about.html" class="hover:text-caramel transition-colors">Our Story</a></li>
+                        <li><a href="resident-cats.html" class="hover:text-caramel transition-colors">Resident Cats</a></li>
+                        <li><a href="adoption.html" class="hover:text-caramel transition-colors">Adoption Process</a></li>
+                        <li><a href="events.html" class="hover:text-caramel transition-colors">Events & Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-caramel"></i>
+                            <span>123 Feline Lane, Cozy Valley<br>Catown, CT 56789</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-caramel"></i>
+                            <span>(555) 123-PURR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-caramel"></i>
+                            <span>hello@purrandpour.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Stay Connected</h4>
+                    <p class="text-gray-600 mb-4">Get cat updates and event news straight to your inbox.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-caramel transition-colors">
+                        <button type="button" class="absolute right-2 top-2 bg-caramel text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-caramel/90 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Purr & Pour Cat Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

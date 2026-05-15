@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Purr & Pour Cat Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFF7ED',
+                        'caramel': '#C08457',
+                        'sage': '#84A98C',
+                        'beige': '#FAF6F1',
+                        'charcoal': '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-beige font-inter">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-10 bg-white/85 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2">
+                <i class="fas fa-cat"></i>
+                <span>Purr & Pour</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex items-center gap-6 font-medium text-charcoal absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="nav-link text-caramel">Home 1</a>
+                <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden xl:flex items-center gap-3">
+                <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+                <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-4 py-2 text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+                <a href="login.html" class="inline-flex items-center justify-center rounded-full bg-caramel px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-caramel/90">Login</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="xl:hidden text-2xl text-charcoal" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="font-accent text-caramel text-3xl mb-4 block">Gallery</span>
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold text-charcoal mb-8 leading-tight">Moments of <br> Joy.</h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    A visual journey through our cafe, resident cats, and the warm community that supports every adoption story.
+                </p>
+                <div class="flex items-center gap-6">
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-caramel">500+</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Adoptions</span>
+                    </div>
+                    <div class="w-px h-12 bg-gray-200"></div>
+                    <div class="flex flex-col">
+                        <span class="text-4xl font-playfair font-bold text-sage">12k</span>
+                        <span class="text-sm uppercase tracking-widest text-gray-500">Cups Served</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="relative z-10 rounded-[50px] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000" alt="Gallery Hero" class="w-full">
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-caramel/10 rounded-full blur-3xl"></div>
+                <div class="absolute -top-10 -right-10 w-60 h-60 bg-sage/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" alt="Cat 1" class="w-full">
+                </div>
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://t4.ftcdn.net/jpg/13/94/51/17/360_F_1394511705_kl1T3a1LCyuHE3vTPnnG7lrjYWqkLAAs.jpg" alt="Cat 2" class="w-full">
+                </div>
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://rukminim2.flixcart.com/image/480/480/poster/3/r/d/cute-cats-hd-poster-art-bshi4736-bshil4736-large-original-imaehwdptnnqz2sp.jpeg?q=90" alt="Cafe" class="w-full">
+                </div>
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://images.pexels.com/photos/69932/tabby-cat-close-up-portrait-69932.jpeg" alt="Coffee" class="w-full">
+                </div>
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&q=80&w=800" alt="Cat 3" class="w-full">
+                </div>
+                <div class="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&q=80&w=800" alt="Cat 4" class="w-full">
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="btn-outline">Load More Moments</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+                <span class="font-accent text-caramel text-3xl mb-4 block">Behind the Lens</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-charcoal mb-6">Every Photo Tells a Rescue Story</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    Our gallery captures everyday moments of comfort, trust, and playful chaos. From first greetings to forever-home celebrations, each frame reflects the bond between people and cats.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-beige rounded-2xl p-5">
+                        <p class="text-3xl font-playfair font-bold text-caramel">1.8k+</p>
+                        <p class="text-sm uppercase tracking-widest text-gray-500">Photos Captured</p>
+                    </div>
+                    <div class="bg-beige rounded-2xl p-5">
+                        <p class="text-3xl font-playfair font-bold text-caramel">320+</p>
+                        <p class="text-sm uppercase tracking-widest text-gray-500">Happy Families</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&q=80&w=800" alt="Cat Closeup" class="w-full h-56 rounded-3xl object-cover shadow-md">
+                <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&q=80&w=800" alt="Cat Portrait" class="w-full h-56 rounded-3xl object-cover shadow-md">
+                <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&q=80&w=800" alt="Cafe Moment" class="w-full h-56 rounded-3xl object-cover shadow-md">
+                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80&w=800" alt="Playful Cat" class="w-full h-56 rounded-3xl object-cover shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-charcoal text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute -top-24 -left-20 w-72 h-72 rounded-full bg-caramel blur-3xl"></div>
+            <div class="absolute -bottom-24 -right-16 w-72 h-72 rounded-full bg-sage blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-14">
+                <span class="font-accent text-caramel text-3xl mb-3 block">Gallery Highlights</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold">What Our Visitors Love Most</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+                    <i class="fas fa-camera-retro text-caramel text-3xl mb-5"></i>
+                    <h3 class="text-2xl font-bold mb-3">Candid Moments</h3>
+                    <p class="text-gray-200">Natural interactions between cats and guests make every visit unique.</p>
+                </div>
+                <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+                    <i class="fas fa-heart text-caramel text-3xl mb-5"></i>
+                    <h3 class="text-2xl font-bold mb-3">Adoption Smiles</h3>
+                    <p class="text-gray-200">Photos from adoption day celebrate new beginnings and forever homes.</p>
+                </div>
+                <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+                    <i class="fas fa-mug-hot text-caramel text-3xl mb-5"></i>
+                    <h3 class="text-2xl font-bold mb-3">Cafe Vibes</h3>
+                    <p class="text-gray-200">Warm drinks, soft purrs, and cozy corners define our visual signature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center gap-2 mb-6">
+                        <i class="fas fa-cat"></i>
+                        <span>Purr & Pour</span>
+                    </a>
+                    <p class="text-gray-600 mb-6">A premium sanctuary for cats and coffee lovers. Dedicated to finding forever homes for our feline friends since 2020.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-caramel transition-all hover:bg-caramel hover:text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li><a href="about.html" class="hover:text-caramel transition-colors">Our Story</a></li>
+                        <li><a href="resident-cats.html" class="hover:text-caramel transition-colors">Resident Cats</a></li>
+                        <li><a href="adoption.html" class="hover:text-caramel transition-colors">Adoption Process</a></li>
+                        <li><a href="events.html" class="hover:text-caramel transition-colors">Events & Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-caramel"></i>
+                            <span>123 Feline Lane, Cozy Valley<br>Catown, CT 56789</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-caramel"></i>
+                            <span>(555) 123-PURR</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-caramel"></i>
+                            <span>hello@purrandpour.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Stay Connected</h4>
+                    <p class="text-gray-600 mb-4">Get cat updates and event news straight to your inbox.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-caramel transition-colors">
+                        <button type="button" class="absolute right-2 top-2 bg-caramel text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-caramel/90 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Purr & Pour Cat Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

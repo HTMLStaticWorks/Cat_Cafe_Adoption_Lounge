@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Purr & Pour Cat Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'cream': '#FFF7ED', 'caramel': '#C08457', 'sage': '#84A98C', 'beige': '#FAF6F1', 'charcoal': '#1F2937' },
+                    fontFamily: { 'playfair': ['"Playfair Display"', 'serif'], 'inter': ['Inter', 'sans-serif'], 'parisienne': ['Parisienne', 'cursive'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-beige font-inter min-h-screen flex flex-col p-6 overflow-x-hidden overflow-y-auto relative">
+
+    <!-- Decorative Elements -->
+    <div class="absolute -top-20 -left-20 w-80 h-80 bg-caramel/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-sage/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="fixed top-3 right-3 sm:top-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3">
+        <button type="button" id="rtl-toggle" onclick="toggleRTL()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">RTL</button>
+        <button type="button" id="theme-toggle" onclick="toggleTheme()" class="inline-flex items-center justify-center rounded-full border border-caramel bg-white/90 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-caramel shadow-sm transition-all hover:bg-caramel hover:text-white">Theme</button>
+    </div>
+<main class="flex-1 w-full flex items-center justify-center pt-20 sm:pt-24 md:pt-0">
+    <!-- Login Container -->
+    <div class="max-w-md w-full relative z-10">
+        <div class="glass-card p-10 bg-white/40 backdrop-blur-xl border border-white/20 rounded-[40px] shadow-2xl">
+            <div class="text-center mb-10">
+                <a href="index.html" class="text-3xl font-playfair font-bold text-caramel flex items-center justify-center gap-2 mb-6">
+                    <i class="fas fa-cat"></i>
+                    <span>Purr & Pour</span>
+                </a>
+                <h1 class="text-3xl font-bold text-charcoal">Welcome Back</h1>
+                <p class="text-gray-500">Sign in to manage your bookings and adoptions</p>
+            </div>
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-charcoal mb-2">Email Address</label>
+                    <div class="relative">
+                        <i class="fas fa-envelope absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="email" class="w-full bg-white/50 border-none rounded-2xl pl-12 pr-6 py-4 focus:ring-2 focus:ring-caramel outline-none transition-all" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-charcoal mb-2">Password</label>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="password" class="w-full bg-white/50 border-none rounded-2xl pl-12 pr-6 py-4 focus:ring-2 focus:ring-caramel outline-none transition-all" placeholder="��������">
+                    </div>
+                </div>
+                
+                <div class="flex flex-nowrap items-center justify-between gap-2">
+                    <label for="remember" class="inline-flex items-center gap-2 whitespace-nowrap text-xs sm:text-sm text-gray-600">
+                        <input type="checkbox" id="remember" class="w-5 h-5 accent-caramel rounded-md">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="whitespace-nowrap text-xs sm:text-sm text-caramel hover:underline">Forgot Password</a>
+                </div>
+
+                <button class="w-full btn-primary py-4 text-lg">Sign In</button>
+                
+                <div class="relative py-4">
+                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-200"></div></div>
+                    <div class="relative flex justify-center text-sm"><span class="px-2 bg-beige text-gray-500">Or continue with</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center gap-2 py-3 border-2 border-white bg-white/30 rounded-2xl hover:bg-white/50 transition-all">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="flex items-center justify-center gap-2 py-3 border-2 border-white bg-white/30 rounded-2xl hover:bg-white/50 transition-all">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <p class="text-center mt-8 text-gray-600">
+            New to the lounge? <a href="register.html" class="text-caramel font-bold hover:underline">Create an account</a>
+        </p>
+    </div>
+
+    </main>
+
+    
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
