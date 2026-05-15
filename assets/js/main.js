@@ -161,7 +161,7 @@ let mobileMenu = document.getElementById('mobile-menu');
 if (!mobileMenu) {
     mobileMenu = document.createElement('div');
     mobileMenu.id = 'mobile-menu';
-    mobileMenu.className = 'fixed inset-0 bg-charcoal/95 backdrop-blur-xl z-[100] flex flex-col items-center justify-center gap-6 text-xl text-white transform translate-x-full transition-transform duration-500 hidden';
+    mobileMenu.className = 'fixed inset-0 bg-charcoal/95 backdrop-blur-xl z-[100] flex flex-col items-center justify-start pt-24 pb-10 gap-6 text-xl text-white overflow-y-auto transform translate-x-full transition-transform duration-500 hidden';
     mobileMenu.innerHTML = `
         <button class="absolute top-10 right-10 text-4xl" id="close-menu">
             <i class="fas fa-times"></i>
