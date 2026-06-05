@@ -564,19 +564,27 @@
             });
         }
 
+        let testimonialSwiper;
+        const initSwiper = () => {
+            if (window.Swiper && document.querySelector('.testimonialSwiper')) {
+                if (testimonialSwiper) {
+                    testimonialSwiper.destroy(true, true);
+                }
+                testimonialSwiper = new Swiper('.testimonialSwiper', {
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    autoplay: {
+                        delay: 5000,
+                    },
+                });
+            }
+        };
+
         // Initialize Swiper (guarded so other buttons still work offline)
-        if (window.Swiper && document.querySelector('.testimonialSwiper')) {
-            new Swiper('.testimonialSwiper', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                autoplay: {
-                    delay: 5000,
-                },
-            });
-        }
+        initSwiper();
 
         // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
@@ -615,6 +623,7 @@
             if (rtlToggle) {
                 rtlToggle.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
             }
+            initSwiper();
         };
 
         window.toggleRTL = () => {
